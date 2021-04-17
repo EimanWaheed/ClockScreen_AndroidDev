@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:id="@+id/cb" />
+
+    <TextView
+        android:id="@+id/country_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="50dp"
+        android:text="@string/sample_text"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/country_time"
+        android:textColor="#FF0000"
+        android:layout_width="wrap_content"
+        android:text="12:30Am"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content">
+    </TextView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
