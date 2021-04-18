@@ -39,18 +39,18 @@ public class searchAdapter extends RecyclerView.Adapter<searchAdapter.Programmin
         holder.name.setText( temp.get(position)) ;
         holder.time.setText(data.getCountryTime());
         if(temp!=null && temp.size()>0){
-            //holder.checkboxvalues.setText(temp.get(position));
-            //holder.checkboxvalues.setOnClickListener(new View.OnClickListener() {
-              //  @Override
-                //public void onClick(View v) {
+            //if the checkbox has been checked
+            holder.checkboxvalues.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
                     if(holder.checkboxvalues.isChecked()){
                         cboxlist.add(temp.get(position));
                     }
                     else{
                         cboxlist.remove(temp.get(position));
                     }
-                //}
-            //});
+                }
+            });
         }
     }
 
@@ -58,8 +58,6 @@ public class searchAdapter extends RecyclerView.Adapter<searchAdapter.Programmin
     public int getItemCount() {
         return temp.size();
     }
-
-
 
     public class ProgrammingViewHolder extends RecyclerView.ViewHolder{
         ImageView flag;

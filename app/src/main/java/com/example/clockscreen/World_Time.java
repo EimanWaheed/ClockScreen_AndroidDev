@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class World_Time {
-    //public static String[] countryName;
     public String[] cn;
-    List<String> countryName;
+    ArrayList<String> cnamelist=new ArrayList<>(); //for first screen
+    List<String> countryName; //for second screen
     private String countryTime;
 
     public World_Time(){
@@ -72,15 +72,31 @@ public class World_Time {
         this.countryTime = countryTime;
     }
 
+    public void setCountryList(ArrayList<String>cl){
+        cnamelist=cl;
+    }
+    public void setCountryTime(String ct){
+        countryTime=ct;
+    }
     public int getLength(){
         return countryName.size();
     }
+
+    //for the updated data list for first screen
+    public int getLengthList(){
+        return cnamelist.size();
+    }
+
     public List<String> getCountryList(){
         return countryName;
     }
+
     public String getCountryName(int i) {
         return cn[i];
     }
+
+    //for the updated data list for first screen
+    public String getCountryNameList(int i) { return cnamelist.get(i); }
 
     public String getCountryTime() {
         return countryTime;

@@ -29,13 +29,13 @@ public class ProgrammingAdapter extends RecyclerView.Adapter<ProgrammingAdapter.
     @Override
     public void onBindViewHolder(@NonNull ProgrammingViewHolder holder, int position) {
 
-        holder.name.setText( data.getCountryName(position)) ;
+        holder.name.setText( data.getCountryNameList(position)) ;
         holder.time.setText(data.getCountryTime());
     }
 
     @Override
     public int getItemCount() {
-        return data.getLength();
+        return data.getLengthList();
     }
 
     public class ProgrammingViewHolder extends RecyclerView.ViewHolder{

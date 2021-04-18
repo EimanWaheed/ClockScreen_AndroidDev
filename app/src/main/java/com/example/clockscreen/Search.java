@@ -22,7 +22,6 @@ public class Search extends AppCompatActivity {
 
     private  searchAdapter adapter;
     private World_Time w;
-   // private ArrayList<String> arr=new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,6 @@ public class Search extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         w = new World_Time();
         adapter = new searchAdapter(w);
-       // arr=adapter.getCboxList();
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
@@ -41,7 +39,6 @@ public class Search extends AppCompatActivity {
 
         // calling the action bar
         ActionBar actionBar = getSupportActionBar();
-
         // showing the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -59,14 +56,15 @@ public class Search extends AppCompatActivity {
 
         });
     }
-    /*public void onBackPressed(){
+    //for sending data along with moving to previous activity
+    public void onBackPressed(){
+        ArrayList<String> cboxlist=adapter.getCboxList();
         Intent intent = new Intent();
-        intent.putExtra("checkboxlist",adapter.getCboxList());
+        intent.putExtra("checklist",cboxlist); //send the checkboxed list to previous activity
         setResult(RESULT_OK, intent);
-        //startActivityForResult(intent, EDIT_TRAININGDAY_RESPONSE);
         finish();
-    }*/
-
+    }
+    //for moving to back screen
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
